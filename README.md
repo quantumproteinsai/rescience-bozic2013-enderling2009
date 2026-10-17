@@ -1,10 +1,14 @@
 # Independent replication of two stochastic models of cancer
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23437598.svg)](https://doi.org/10.5281/zenodo.23437598)
+
 Code, data and manuscript for the preprint
 
 > *Independent replication of two stochastic models of cancer: resistance to combination
 > therapy (Bozic et al., 2013) and cancer stem cell driven tumour growth (Enderling et al., 2009).*
 > Bertrand Mercier des Rochettes, 2026. [Preprint DOI, to be added]
+>
+> Code and data archived at Zenodo: [doi:10.5281/zenodo.23437598](https://doi.org/10.5281/zenodo.23437598) (all versions)
 
 Both models were re-implemented from the published descriptions only:
 

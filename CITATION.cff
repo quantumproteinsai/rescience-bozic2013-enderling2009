@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this code or data, please cite the preprint and this repository."
 title: "Independent replication of two stochastic models of cancer: resistance to combination therapy (Bozic et al., 2013) and cancer stem cell driven tumour growth (Enderling et al., 2009)"
-# TODO before release: add the archive DOI and preprint DOI
+# TODO: add the preprint DOI once posted
 authors:
   - given-names: "Bertrand"
     family-names: "Mercier des Rochettes"
     affiliation: "Quantum Proteins AI, Cergy-Pontoise, France"
     orcid: "https://orcid.org/0000-0002-1145-1881"
 license: MIT
+doi: "10.5281/zenodo.23437598"
 repository-code: "https://github.com/quantumproteinsai/rescience-bozic2013-enderling2009"

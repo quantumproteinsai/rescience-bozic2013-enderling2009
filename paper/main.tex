@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{siunitx}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage{caption}
 \usepackage{placeins}
@@ -258,10 +259,12 @@ that no tumour reached the edge, not a dynamically growing domain. We did not ha
 to the original code of either study.
 
 \section*{Code and data availability}
-All code, data and scripts: \url{https://github.com/quantumproteinsai/rescience-bozic2013-enderling2009} [archive DOI, to be added at submission].
-The resistance simulation is \texttt{src/resistance/resistance\_core.h} (C++), the automaton
-reference is \texttt{src/ca/ca\_reference.cpp}; \texttt{make all} rebuilds the programs,
-regenerates every number and figure from fixed seeds and compiles this manuscript.
+All code, data and scripts are available at
+\url{https://github.com/quantumproteinsai/rescience-bozic2013-enderling2009}
+and archived at Zenodo (\href{https://doi.org/10.5281/zenodo.23437598}{doi:10.5281/zenodo.23437598}).
+The resistance simulation is \nolinkurl{src/resistance/resistance_core.h} (C++), the
+automaton reference is \nolinkurl{src/ca/ca_reference.cpp}; \texttt{make all} rebuilds the
+programs, regenerates every number and figure from fixed seeds and compiles this manuscript.
 
 \section*{Use of AI assistance}
 The software, simulations, analyses and the first draft of this manuscript were produced
