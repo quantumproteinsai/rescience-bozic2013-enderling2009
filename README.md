@@ -4,7 +4,7 @@ Code, data and manuscript for the preprint
 
 > *Independent replication of two stochastic models of cancer: resistance to combination
 > therapy (Bozic et al., 2013) and cancer stem cell driven tumour growth (Enderling et al., 2009).*
-> [Author name], [year]. [Preprint DOI, to be added]
+> Bertrand Mercier des Rochettes, 2026. [Preprint DOI, to be added]
 
 Both models were re-implemented from the published descriptions only:
 
