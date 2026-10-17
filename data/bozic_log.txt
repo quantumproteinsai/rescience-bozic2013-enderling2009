@@ -1,0 +1,44 @@
+dual 0 1e+07 sim 1.0000 eq1 1.0000
+dual 0 2e+07 sim 1.0000 eq1 1.0000
+dual 0 5e+07 sim 1.0000 eq1 0.9999
+dual 0 1e+08 sim 1.0000 eq1 0.9999
+dual 0 2e+08 sim 1.0000 eq1 0.9997
+dual 0 5e+08 sim 0.9998 eq1 0.9993
+dual 0 1e+09 sim 0.9988 eq1 0.9987
+dual 0 2e+09 sim 0.9982 eq1 0.9974
+dual 0 5e+09 sim 0.9922 eq1 0.9935
+dual 0 1e+10 sim 0.9860 eq1 0.9870
+dual 1 1e+07 sim 0.9885 eq1 0.9867
+dual 1 2e+07 sim 0.9748 eq1 0.9737
+dual 1 5e+07 sim 0.9390 eq1 0.9354
+dual 1 1e+08 sim 0.8795 eq1 0.8751
+dual 1 2e+08 sim 0.7690 eq1 0.7657
+dual 1 5e+08 sim 0.5045 eq1 0.5131
+dual 1 1e+09 sim 0.2647 eq1 0.2632
+dual 1 2e+09 sim 0.0700 eq1 0.0693
+dual 1 5e+09 sim 0.0010 eq1 0.0013
+dual 1 1e+10 sim 0.0000 eq1 0.0000
+dual 2 1e+07 sim 0.9720 eq1 0.9737
+dual 2 2e+07 sim 0.9513 eq1 0.9480
+dual 2 5e+07 sim 0.8785 eq1 0.8751
+dual 2 1e+08 sim 0.7732 eq1 0.7658
+dual 2 2e+08 sim 0.5897 eq1 0.5865
+dual 2 5e+08 sim 0.2617 eq1 0.2634
+dual 2 1e+09 sim 0.0695 eq1 0.0694
+dual 2 2e+09 sim 0.0045 eq1 0.0048
+dual 2 5e+09 sim 0.0000 eq1 0.0000
+dual 2 1e+10 sim 0.0000 eq1 0.0000
+mono 0 1e+07 sim 0.5048 eq1 0.5134
+mono 0 2e+07 sim 0.2562 eq1 0.2636
+mono 0 5e+07 sim 0.0370 eq1 0.0357
+mono 0 1e+08 sim 0.0020 eq1 0.0013
+mono 0 2e+08 sim 0.0000 eq1 0.0000
+mono 0 5e+08 sim 0.0000 eq1 0.0000
+mono 0 1e+09 sim 0.0000 eq1 0.0000
+mono 0 2e+09 sim 0.0000 eq1 0.0000
+mono 0 5e+09 sim 0.0000 eq1 0.0000
+mono 0 1e+10 sim 0.0000 eq1 0.0000
+two-step dt 0.10 k 1000: 0.00285 [0.00220, 0.00369]
+two-step dt 0.10 k 10000: 0.00330 [0.00259, 0.00420]
+two-step dt 0.02 k 1000: 0.00220 [0.00164, 0.00295]
+two-step dt 0.10 k 1000: 0.00230 [0.00172, 0.00307]

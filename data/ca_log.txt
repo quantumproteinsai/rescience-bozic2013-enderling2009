@@ -1,0 +1,14 @@
+paradox alpha 0.0 done
+paradox alpha 0.01 done
+paradox alpha 0.05 done
+paradox alpha 0.1 done
+paradox alpha 0.2 done
+paradox alpha 0.3 done
+migration pm 0.4167 done
+migration pm 0.5 done
+migration pm 0.6 done
+migration pm 0.7 done
+migration pm 0.8 done
+migration pm 0.9 done
+migration pm 1.0 done
+images done
