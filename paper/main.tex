@@ -71,6 +71,17 @@ increasing the death rate of non-stem cells can paradoxically accelerate long-te
 growth; Poleszczuk \& Enderling \cite{poleszczuk2014} later gave a compact specification of
 the model with explicit parameter values, which we used.
 
+\paragraph{Related work.} The stem cell paradox has since been studied with continuum
+models \cite{hillen2013,borsi2017} and with a further cellular automaton
+\cite{shyntar2022}; Enderling or Hillen is a co-author of each. These studies set their own
+parameters and rules (for instance migration $\mu=5$ and capacity $\rho=15$ in
+\cite{hillen2013}; $\mu=1$, $\rho_{\max}=15$ and death tested at every step with
+probability $\alpha/24$ in \cite{shyntar2022}), whereas the specification we follow
+\cite{poleszczuk2014} has $\rho_{\max}=10$ and a death-rate rule that it does not state. The
+rules therefore differ even within one research group. As far as we could find (October
+2026), the model of \cite{enderling2009,poleszczuk2014} has not been re-implemented
+independently from its published description, and the original code is not available.
+
 \section{Methods}
 
 \subsection{Resistance to combination therapy}
@@ -258,6 +269,11 @@ suggest the difference is negligible. Our automaton reference uses a fixed latti
 that no tumour reached the edge, not a dynamically growing domain. We did not have access
 to the original code of either study.
 
+\paragraph{Contact with the original authors.} In October 2026 we wrote to H.~Enderling
+about the migration rule, the timing of death and the tumour size of about 140,000 cells, and
+to the corresponding authors of \cite{bozic2013} about patient N20 and the two-step
+approximation. No reply had been received when this version was written.
+
 \section*{Code and data availability}
 All code, data and scripts are available at
 \url{https://github.com/quantumproteinsai/rescience-bozic2013-enderling2009}
@@ -291,6 +307,15 @@ doi:10.1007/7651\_2016\_346
 \bibitem{rescience} Rougier NP, Hinsen K, Alexandre F, et al. Sustainable computational
 science: the ReScience initiative. PeerJ Computer Science. 2017;3:e142.
 doi:10.7717/peerj-cs.142
+\bibitem{hillen2013} Hillen T, Enderling H, Hahnfeldt P. The tumor growth paradox and
+immune system-mediated selection for cancer stem cells. Bull Math Biol. 2013;75:161--184.
+doi:10.1007/s11538-012-9798-x
+\bibitem{borsi2017} Borsi I, Fasano A, Primicerio M, Hillen T. A non-local model for cancer
+stem cells and the tumour growth paradox. Math Med Biol. 2017;34:59--75.
+doi:10.1093/imammb/dqv037
+\bibitem{shyntar2022} Shyntar A, Patel A, Rhodes M, et al. The tumor invasion paradox in
+cancer stem cell-driven solid tumors. Bull Math Biol. 2022;84:139.
+doi:10.1007/s11538-022-01086-4
 \end{thebibliography}
 
 \end{document}
