@@ -37,13 +37,20 @@ Both models were re-implemented from the published descriptions only:
 ## Reproducing
 
 Requirements: Linux or macOS, `g++` with OpenMP, Python ≥ 3.10, and a LaTeX distribution
-with `latexmk`.
+with `latexmk` and these packages: `lmodern`, `siunitx`, `xurl`, `booktabs`, `caption`,
+`placeins`, `hyperref` (on Debian/Ubuntu, `texlive-latex-extra` and `lmodern`).
 
 ```bash
-make paper   # manuscript from the data shipped in data/      (minutes)
-make test    # quick checks of the resistance simulation       (about 1 min)
-make all     # rebuild programs, regenerate ALL data, figures and manuscript
+make paper     # manuscript from the data shipped in data/      (minutes)
+make test      # quick checks of the resistance simulation       (about 1 min)
+make quick-ca  # quick check of the automaton's death-rate paradox (about 1 min on 2 cores)
+make all       # rebuild programs, regenerate ALL data, figures and manuscript
 ```
+
+`make quick-ca` runs 4 tumours at α = 0 and α = 0.2 and writes only to `data/quick/`; the
+data used in the paper are not touched. It checks the central qualitative result (a higher
+death rate gives larger tumours), not the numbers of the paper, which come from the full
+ensembles (32 tumours per death rate, `make data-ca`).
 
 `make all` takes several hours on an 8-thread laptop CPU, almost all of it in the
 automaton ensembles (`make data-ca`). Each data set can be regenerated on its own with

@@ -1,5 +1,6 @@
 /build/
 /paper/build/
 /.venv/
+/data/quick/
 __pycache__/
 *.pyc

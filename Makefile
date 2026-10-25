@@ -2,14 +2,16 @@
 #   make paper     compile the manuscript from the data in data/ (minutes)
 #   make all       rebuild the programs, regenerate ALL data (hours), figures and manuscript
 #   make test      quick checks of the resistance simulation
-# Requirements: g++ with OpenMP, Python 3.10+, a LaTeX distribution with latexmk.
+#   make quick-ca  quick check of the automaton's death-rate paradox (4 tumours; writes data/quick/ only)
+# Requirements: g++ with OpenMP, Python 3.10+, a LaTeX distribution with latexmk
+# (LaTeX packages: lmodern, siunitx, xurl, booktabs, caption, placeins, hyperref).
 
 CXX     ?= g++
 PYTHON  := .venv/bin/python
 # -ffp-contract=off, no -ffast-math: reproducible floating point
 CXXFLAGS = -O2 -fopenmp -ffp-contract=off -Wall -Wextra
 
-.PHONY: all build venv data data-bozic data-patients data-ca figures paper test clean
+.PHONY: all build venv data data-bozic data-patients data-ca quick-ca figures paper test clean
 
 all: build data figures paper
 
@@ -39,6 +41,9 @@ data-patients: build venv
 
 data-ca: build venv
 	$(PYTHON) scripts/ca_data.py | tee data/ca_log.txt
+
+quick-ca: build venv
+	CA_QUICK=1 $(PYTHON) scripts/ca_data.py
 
 figures: venv
 	$(PYTHON) scripts/make_figures.py
