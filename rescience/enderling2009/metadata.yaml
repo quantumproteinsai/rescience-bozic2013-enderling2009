@@ -1,0 +1,67 @@
+# To be filled by the author(s) at the time of submission
+title: "[Re] Paradoxical dependencies of tumor dormancy and progression on basic cell kinetics"
+
+authors:
+  - name: Bertrand Mercier des Rochettes
+    orcid: 0000-0002-1145-1881
+    email: contact@quantum-proteins.ai
+    affiliations: 1,*
+
+affiliations:
+  - code:    1
+    name:    Quantum Proteins AI
+    address: Cergy-Pontoise, France
+
+keywords: cancer stem cells, cellular automaton, tumour growth, agent-based model, C++
+
+code:
+  - url: https://github.com/quantumproteinsai/rescience-bozic2013-enderling2009
+  - doi: 10.5281/zenodo.23437598
+  - swh:
+
+data:
+  - url:
+  - doi:
+
+replication:
+ - cite: "Enderling H, Anderson ARA, Chaplain MAJ, Beheshti A, Hlatky L, Hahnfeldt P. Paradoxical dependencies of tumor dormancy and progression on basic cell kinetics. Cancer Research 2009;69:8814-8821."
+ - bib:  enderling2009
+ - url:  https://doi.org/10.1158/0008-5472.CAN-09-2115
+ - doi:  10.1158/0008-5472.CAN-09-2115
+
+abstract: "Enderling et al. (2009) introduced a cellular automaton of cancer stem cells and their non-stem progeny and reported that increasing the spontaneous death rate of non-stem cells can paradoxically make tumours grow larger, by freeing space for stem cell divisions. We re-implemented the model from the compact specification of Poleszczuk and Enderling (2014). The paradox is reproduced: after 180 days, tumours grow from 56,922 cells at a death rate of 0 to 167,773 at 0.2, with 12-fold more stem cells, and about 71 % of cells have no free neighbour, as reported. The published tumour size, about 140,000 cells after 180 days, is not reproduced: reading the migration rule in cell widths gives 60,692 cells, the literal reading 328,155. The size depends steeply on the migration probability and on when spontaneous death is tested, two rules the specification leaves open; the original code could not be found."
+
+bibliography: bibliography.bib
+type: Replication
+domain: Computational Biology
+language: C++
+
+review:
+  - url:
+
+contributors:
+  - name:
+    orcid:
+    role: editor
+  - name:
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+dates:
+  - received:
+  - accepted:
+  - published:
+
+article:
+  - number:
+  - doi:
+  - url:
+
+journal:
+  - name:   "ReScience C"
+  - issn:   2430-3658
+  - volume:
+  - issue:

@@ -4,3 +4,15 @@
 /data/quick/
 __pycache__/
 *.pyc
+/rescience/*/article.pdf
+/rescience/*/*.aux
+/rescience/*/*.log
+/rescience/*/*.fls
+/rescience/*/*.fdb_latexmk
+/rescience/*/*.out
+/rescience/*/*.bbl
+/rescience/*/*.bcf
+/rescience/*/*.blg
+/rescience/*/*.run.xml
+/rescience/*/*.xdv
+/rescience/*/build.log

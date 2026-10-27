@@ -105,6 +105,45 @@ macros.update({
     "BozicNTwentyEq": "%.3f" % float(n20["eq1_n12_1"]),
 })
 
+# ----------------------------------------------------------------------------- cost of resistance, sequential therapy
+cost = read("bozic_cost.csv")
+consistent = 0
+cells = {}
+for r in cost:
+    p, lo, hi, ref = (float(r[k]) for k in ("p_fail", "ci_low", "ci_high", "p_fail_paper"))
+    # the paper's values are rounded to two decimals
+    consistent += lo <= ref + 0.005 and hi >= ref - 0.005
+    cells[(r["n12"], float(r["M"]), float(r["b"]), float(r["cost"]))] = (p, ref)
+macros["BozicCostConsistent"] = "{} of {}".format(consistent, len(cost))
+macros["BozicCostLesions"] = fmt_int(int(cost[0]["lesions"]))
+conds = []
+for k in cells:
+    if k[:3] not in conds:
+        conds.append(k[:3])
+costs = sorted({k[3] for k in cells})
+with open(os.path.join(FIG, "cost_table.tex"), "w") as f:
+    f.write("\\begin{tabular}{rrr" + "c" * len(costs) + "}\n\\toprule\n$n_{12}$ & $M$ & $b$ & "
+            + " & ".join("$c={:g}\\,\\%$".format(100 * c) for c in costs) + " \\\\\n\\midrule\n")
+    for n12, M, b in conds:
+        f.write("{} & $10^{{{:.0f}}}$ & {:g} & ".format(n12, math.log10(M), b)
+                + " & ".join("{:.3f} ({:.2f})".format(*cells[(n12, M, b, c)]) for c in costs) + " \\\\\n")
+    f.write("\\bottomrule\n\\end{tabular}\n")
+seq = read("bozic_sequential.csv")
+names = {"simultaneous": "simultaneous", "sequential": "sequential"}
+with open(os.path.join(FIG, "sequential_table.tex"), "w") as f:
+    f.write("\\begin{tabular}{lrll}\n\\toprule\nTherapy & $n_{12}$ & eradicated (95\\,\\% CI) & paper \\\\\n\\midrule\n")
+    for r in seq:
+        label = "division suppressed ($b'=0.10$, $d'=0.13$)" if r["case"].startswith("suppress") else r["case"]
+        hi = float(r["ci_high"])
+        f.write("{} & {} & {:.3f} [{:.3f}, {} ] & {} \\\\\n".format(
+            label, r["n12"], float(r["p_erad"]), float(r["ci_low"]), "{:.3f}".format(hi) if hi >= 0.001 else "{:.4f}".format(hi),
+            r["paper"].replace("%", "\\%").replace(">", "$>$")))
+    f.write("\\bottomrule\n\\end{tabular}\n")
+seqd = {(r["case"], r["n12"]): r for r in seq}
+macros["BozicSimulOneCross"] = "{:.1f}\\,\\%".format(100 * float(seqd[("simultaneous", "1")]["p_erad"]))
+macros["BozicSuppress"] = "{:.1f}\\,\\%".format(100 * float(seqd[("suppress division b' 0.10 d' 0.13", "1")]["p_erad"]))
+macros["BozicSeqLesions"] = fmt_int(int(seq[0]["lesions"]))
+
 # ----------------------------------------------------------------------------- automaton
 def summary(rows, key):
     out = defaultdict(lambda: defaultdict(list))

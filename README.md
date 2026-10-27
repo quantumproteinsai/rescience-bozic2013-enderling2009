@@ -31,6 +31,7 @@ Both models were re-implemented from the published descriptions only:
 | `scripts/` | Generate the data (`bozic_data.py`, `bozic_patients.py`, `ca_data.py`); figures, tables and the numbers quoted in the text (`make_figures.py`) |
 | `data/` | All simulation output used in the paper, with run logs. Also `bozic2013_supplementary_file2.xlsx`, the lesion sizes from Bozic et al. (eLife, CC BY 4.0), unmodified |
 | `figures/` | Figures (PDF) and tables (LaTeX) written by `make_figures.py` |
+| `rescience/` | The same work as two ReScience C articles: `bozic2013/` and `enderling2009/` (template in `rescience/template/`, GPL-3+ and font licences) |
 | `paper/` | Manuscript. `results.tex` holds every simulated number as a macro, written by `make_figures.py` |
 | `tests/` | Quick checks of the resistance simulation |
 

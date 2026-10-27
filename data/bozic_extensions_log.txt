@@ -1,0 +1,38 @@
+n12 0 M 1e+09 b 0.14 c 0.00: fail 0.001 [0.001, 0.002] paper 0.00
+n12 0 M 1e+09 b 0.14 c 0.01: fail 0.001 [0.001, 0.002] paper 0.00
+n12 0 M 1e+09 b 0.14 c 0.05: fail 0.001 [0.000, 0.002] paper 0.00
+n12 0 M 1e+09 b 0.14 c 0.10: fail 0.001 [0.001, 0.002] paper 0.00
+n12 0 M 1e+09 b 1.00 c 0.00: fail 0.006 [0.005, 0.008] paper 0.01
+n12 0 M 1e+09 b 1.00 c 0.01: fail 0.007 [0.005, 0.008] paper 0.01
+n12 0 M 1e+09 b 1.00 c 0.05: fail 0.006 [0.005, 0.008] paper 0.01
+n12 0 M 1e+09 b 1.00 c 0.10: fail 0.003 [0.002, 0.004] paper 0.00
+n12 1 M 1e+09 b 0.14 c 0.00: fail 0.737 [0.729, 0.746] paper 0.74
+n12 1 M 1e+09 b 0.14 c 0.01: fail 0.739 [0.731, 0.748] paper 0.73
+n12 1 M 1e+09 b 0.14 c 0.05: fail 0.720 [0.711, 0.729] paper 0.72
+n12 1 M 1e+09 b 0.14 c 0.10: fail 0.695 [0.685, 0.704] paper 0.70
+n12 1 M 1e+09 b 1.00 c 0.00: fail 0.739 [0.731, 0.748] paper 0.74
+n12 1 M 1e+09 b 1.00 c 0.01: fail 0.735 [0.726, 0.743] paper 0.74
+n12 1 M 1e+09 b 1.00 c 0.05: fail 0.720 [0.711, 0.728] paper 0.72
+n12 1 M 1e+09 b 1.00 c 0.10: fail 0.697 [0.688, 0.706] paper 0.70
+n12 0 M 1e+11 b 0.14 c 0.00: fail 0.117 [0.111, 0.124] paper 0.12
+n12 0 M 1e+11 b 0.14 c 0.01: fail 0.107 [0.101, 0.113] paper 0.11
+n12 0 M 1e+11 b 0.14 c 0.05: fail 0.080 [0.075, 0.086] paper 0.08
+n12 0 M 1e+11 b 0.14 c 0.10: fail 0.054 [0.050, 0.059] paper 0.06
+n12 0 M 1e+11 b 1.00 c 0.00: fail 0.533 [0.523, 0.542] paper 0.53
+n12 0 M 1e+11 b 1.00 c 0.01: fail 0.509 [0.499, 0.518] paper 0.51
+n12 0 M 1e+11 b 1.00 c 0.05: fail 0.420 [0.410, 0.430] paper 0.42
+n12 0 M 1e+11 b 1.00 c 0.10: fail 0.319 [0.310, 0.328] paper 0.32
+n12 1 M 1e+11 b 0.14 c 0.00: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 0.14 c 0.01: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 0.14 c 0.05: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 0.14 c 0.10: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 1.00 c 0.00: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 1.00 c 0.01: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 1.00 c 0.05: fail 1.000 [1.000, 1.000] paper 1.00
+n12 1 M 1e+11 b 1.00 c 0.10: fail 1.000 [1.000, 1.000] paper 1.00
+simultaneous n12 1: erad 0.2626 [0.2541, 0.2713], 11 at start 0.942; paper 26.3 % eradicated
+sequential n12 1: erad 0.0000 [0.0000, 0.0004], 11 at start 0.942; paper 0 % (73.7 % 11 at start)
+simultaneous n12 0: erad 0.9987 [0.9978, 0.9992], 11 at start 0.004; paper > 99 % eradicated
+sequential n12 0: erad 0.0000 [0.0000, 0.0004], 11 at start 0.004; paper 0 %
+suppress division b' 0.10 d' 0.13 n12 1: erad 0.2891 [0.2803, 0.2981], 11 at start 0.942; paper 29 % (26 % by killing)
+DONE
