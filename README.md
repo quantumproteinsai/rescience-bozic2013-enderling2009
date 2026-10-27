@@ -44,8 +44,10 @@ with `latexmk` and these packages: `lmodern`, `siunitx`, `xurl`, `booktabs`, `ca
 ```bash
 make paper     # manuscript from the data shipped in data/      (minutes)
 make test      # quick checks of the resistance simulation       (about 1 min)
+make quick-check  # 11 published results reproduced exactly from scratch (about 2 min)
 make quick-ca  # quick check of the automaton's death-rate paradox (about 1 min on 2 cores)
 make all       # rebuild programs, regenerate ALL data, figures and manuscript
+make rescience # the two ReScience C articles (needs XeLaTeX)
 ```
 
 `make quick-ca` runs 4 tumours at α = 0 and α = 0.2 and writes only to `data/quick/`; the
