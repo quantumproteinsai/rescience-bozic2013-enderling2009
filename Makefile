@@ -2,6 +2,7 @@
 #   make paper     compile the manuscript from the data in data/ (minutes)
 #   make all       rebuild the programs, regenerate ALL data (hours), figures and manuscript
 #   make test      quick checks of the resistance simulation
+#   make quick-check  reproduce a subset of the published data exactly (a few minutes)
 #   make rescience the two ReScience C articles (rescience/*/article.pdf; needs XeLaTeX)
 #   make quick-ca  quick check of the automaton's death-rate paradox (4 tumours; writes data/quick/ only)
 # Requirements: g++ with OpenMP, Python 3.10+, a LaTeX distribution with latexmk
@@ -12,7 +13,7 @@ PYTHON  := .venv/bin/python
 # -ffp-contract=off, no -ffast-math: reproducible floating point
 CXXFLAGS = -O2 -fopenmp -ffp-contract=off -Wall -Wextra
 
-.PHONY: all build venv rescience data data-bozic data-patients data-ca quick-ca figures paper test clean
+.PHONY: all build venv rescience quick-check data data-bozic data-patients data-ca quick-ca figures paper test clean
 
 all: build data figures paper
 
@@ -55,6 +56,9 @@ figures: venv
 paper: figures
 	cd paper && latexmk -pdf -interaction=nonstopmode -outdir=build main.tex
 	@echo "Manuscript: paper/build/main.pdf"
+
+quick-check: build venv
+	$(PYTHON) scripts/quick_check.py
 
 rescience: figures
 	cd rescience/bozic2013 && $(MAKE) article.pdf
