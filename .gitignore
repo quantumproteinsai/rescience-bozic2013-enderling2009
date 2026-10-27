@@ -4,7 +4,6 @@
 /data/quick/
 __pycache__/
 *.pyc
-/rescience/*/article.pdf
 /rescience/*/*.aux
 /rescience/*/*.log
 /rescience/*/*.fls
