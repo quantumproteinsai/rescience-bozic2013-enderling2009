@@ -69,11 +69,15 @@ lines: equation~(1).}
 
 \paragraph{Two-step resistance at detection.} The probability that fully resistant cells are
 present when treatment starts is reproduced when resistance arises in one step
-($n_{12}\geq 1$), but not when it needs two mutations ($n_{12}=0$, $M=10^9$): simulation
-\BozicTwoStepSim{}, formula \BozicTwoStepFormula{} (Table~\ref{tab:twostep}). The difference
-remains with a five times smaller time step, a ten times higher stochastic threshold, and
-exact event-by-event simulation, so it is not an artefact of our scheme; the corresponding
-formula is an approximation in \cite{bozic2013}. The probability of eradication, which depends
+($n_{12}\geq 1$), but not when it needs two mutations ($n_{12}=0$, $M=10^9$;
+Table~\ref{tab:twostep}). With exact event-by-event simulation of the small populations, as in
+\cite{bozic2013}, the simulated probability is \BozicTwoStepExact{}, against
+\BozicTwoStepFormula{} for the formula, and tau-leaping with a five times smaller time step
+agrees with the exact result. With our default time step the estimate is higher
+(\BozicTwoStepSim{}), and its 95\,\% interval, like that of the run with a ten times higher
+stochastic threshold, just includes the formula: the coarser time step overestimates this
+probability, and only the more accurate simulations separate it from the formula. The
+corresponding formula is an approximation in \cite{bozic2013}. The probability of eradication, which depends
 on surviving resistant lineages rather than on cells present at one instant, agrees.
 
 \begin{table}[htbp]
@@ -136,7 +140,7 @@ predictions, the effect of a cost of resistance, and the failure of sequential t
 points needed care or could not be reproduced. First, the cost of resistance must be counted
 per mutation, which the text implies but does not state for cross-resistant cells. Second, the
 approximation for two-step resistance present at detection overestimates it by
-\BozicTwoStepDev{}; it should not be used to check a simulation, whereas equation~1 can be.
+\BozicTwoStepExactDev{} compared with exact simulation; it should not be used to check a simulation, whereas equation~1 can be.
 The disagreement between Table~1 and Supplementary file~2 for one patient does not change any
 conclusion. We contacted the corresponding author about these points.
 
@@ -153,3 +157,6 @@ AI coding assistant (Claude Opus 5.5, Anthropic, used through Claude Code), unde
 of the author, who defined the study, chose the comparisons, checked the results against the
 original publication and revised the text. The AI is not an author; the author takes full
 responsibility for the content.
+
+\section*{Funding}
+This work received no specific funding.

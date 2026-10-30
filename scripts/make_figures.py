@@ -73,8 +73,11 @@ base = two[0]
 macros["BozicTwoStepSim"] = "{:.4f} [{:.4f}, {:.4f}]".format(float(base["p_res_sim"]), float(base["ci_low"]),
                                                               float(base["ci_high"]))
 macros["BozicTwoStepFormula"] = "{:.4f}".format(float(base["p_res_formula"]))
-devs = [1 - float(r["p_res_sim"]) / float(r["p_res_formula"]) for r in two]
-macros["BozicTwoStepDev"] = "{:.0f}--{:.0f}\\,\\%".format(100 * min(devs), 100 * max(devs))
+exact = next(r for r in two if r["method"] == "exact events")
+macros["BozicTwoStepExact"] = "{:.4f} [{:.4f}, {:.4f}]".format(float(exact["p_res_sim"]), float(exact["ci_low"]),
+                                                                float(exact["ci_high"]))
+macros["BozicTwoStepExactDev"] = "{:.0f}\\,\\%".format(
+    100 * (1 - float(exact["p_res_sim"]) / float(exact["p_res_formula"])))
 with open(os.path.join(FIG, "two_step_table.tex"), "w") as f:
     f.write("\\begin{tabular}{lrrrr}\n\\toprule\nsmall populations & $\\Delta t$ (day) & threshold $K$ & simulated (95\\,\\% CI) & formula $1-p_1p_2$ \\\\\n\\midrule\n")
     for r in two:

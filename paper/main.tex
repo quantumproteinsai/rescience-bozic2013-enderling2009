@@ -37,9 +37,8 @@ evolution of resistance to targeted combination therapy: at the parameters of th
 Figure~3, the analytic probability of eradication (their equation~1) lies inside the 95\,\%
 confidence interval of our simulation at \BozicInside{} of \BozicPoints{} points, for mono
 and dual therapy and up to two cross-resistance mutations. A secondary approximation, the
-probability that two-step resistance is present at detection, is \BozicTwoStepDev{} lower
-in simulation than the formula predicts, with tau-leaping or exact event-by-event simulation
-alike. Their patient-level failure probabilities (Table~1) are reproduced for
+probability that two-step resistance is present at detection, is \BozicTwoStepExactDev{}
+lower in exact event-by-event simulation than the formula predicts. Their patient-level failure probabilities (Table~1) are reproduced for
 \BozicPatientsMatch{} of \BozicPatients{} patients; for the remaining one, the paper's table and
 supplementary data disagree. (ii) The cancer stem cell cellular
 automaton of Enderling et al.\ (Cancer Res 2009), as specified by Poleszczuk \& Enderling
@@ -151,10 +150,13 @@ The paper's central result is reproduced: with one cross-resistance mutation
 
 The probability that resistance to both drugs is present at the start of treatment is also
 reproduced when it arises in one step ($n_{12}\ge 1$), but not when it requires two
-mutations ($n_{12}=0$, $M=10^9$): simulation \BozicTwoStepSim{}, formula \BozicTwoStepFormula{}
-(Table~\ref{tab:twostep}). The difference persists with a five times smaller time step, with a
-ten times higher stochastic threshold, and with exact event-by-event simulation of the small
-populations, as the authors did, so it is not an artefact of our scheme; the formula for $p_2$ is marked as an approximation in \cite{bozic2013}, and the
+mutations ($n_{12}=0$, $M=10^9$; Table~\ref{tab:twostep}). With exact event-by-event
+simulation of the small populations, as the authors did, the simulated probability is
+\BozicTwoStepExact{}, against \BozicTwoStepFormula{} for the formula, and tau-leaping with a
+five times smaller time step agrees with the exact result. With our default time step the
+estimate is higher (\BozicTwoStepSim{}), and its 95\,\% interval, like that of the run with a
+ten times higher stochastic threshold, just includes the formula: the coarser time step
+overestimates this probability. The formula for $p_2$ is marked as an approximation in \cite{bozic2013}, and the
 probability of eradication, which depends on surviving resistant lineages rather than on
 transient cells present at one instant, agrees.
 
