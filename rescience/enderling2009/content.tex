@@ -87,7 +87,12 @@ non-stem cell death rate, is robust: it follows from an independent implementati
 published specification. The quantitative tumour size is not reproduced, because the
 specification leaves open two rules that strongly affect it: the migration probability per
 step and the moment at which spontaneous death is tested. Between the two readings of the
-motility, the final size changes more than five-fold. Quantitative uses of this model should
+motility, the final size changes more than five-fold. Other implementations read the same
+specification differently: the sequential C++ code of a group that parallelised the model
+\cite{salguero2019,capelcode} takes $\mu\,\Delta t = 100/24$ literally and normalises it with
+the death and division probabilities, so that a cell with a free neighbour always dies,
+migrates or divides, and it tests spontaneous death at every step rather than at a division
+attempt, with no death when the proliferation capacity is exhausted. Quantitative uses of this model should
 state these rules explicitly; ours are given above and in the code. We contacted the
 corresponding author about the migration rule and the original code.
 
